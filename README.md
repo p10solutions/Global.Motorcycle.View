@@ -8,4 +8,4 @@ Passo a Passo:
 
 2. Acesse o endpoint da documentação da api em seu navegador https://localhost:7086/swagger/index.html
 
-3.Execute o seguinte docker-compose para criação do banco de dados e broker kafka: https://github.com/p10solutions/Global.MotoDelivery.Docs/blob/main/docker-compose.yml 
+3. Execute o seguinte docker-compose para criação do banco de dados e broker kafka: https://github.com/p10solutions/Global.MotoDelivery.Docs/blob/main/docker-compose.yml 
