@@ -1,6 +1,7 @@
 using AutoMapper;
 using Confluent.Kafka;
 using Global.Motorcycle.View.Application.Features.Locations.Commands.SaveLocation;
+using Global.Motorcycle.View.Application.Features.Rentals.Commands.SaveRental;
 using Global.Motorcycle.View.Domain.Models.Events.Deliveryman;
 using Global.Motorcycle.View.Infraestructure.Deserializer;
 using MediatR;
@@ -52,7 +53,7 @@ namespace Global.Location.Consumer.Consumer.Updated
 
                     _logger.LogInformation(updatedLocationEvent.Value.ToString());
 
-                    var command = _mapper.Map<SaveLocationCommand>(updatedLocationEvent.Value);
+                    var command = _mapper.Map<SaveRentalCommand>(updatedLocationEvent.Value);
 
                     await _mediator.Send(command, cancellationToken);
                 }

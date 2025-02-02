@@ -1,6 +1,6 @@
 ﻿namespace Global.Motorcycle.View.Domain.Entities
 {
-    public class Location
+    public class Rental
     {
         public Guid Id { get; set; }
         public Guid DeliverymanId { get; set; }

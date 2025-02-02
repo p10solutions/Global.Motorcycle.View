@@ -2,11 +2,11 @@ using Global.Motorcycle.View.Application.Features.Common;
 using Global.Motorcycle.View.Domain.Entities;
 using MediatR;
 
-namespace Global.Motorcycle.View.Application.Features.Locations.Commands.SaveLocation
+namespace Global.Motorcycle.View.Application.Features.Rentals.Commands.SaveRental
 {
-    public class SaveLocationCommand: CommandBase<SaveLocationCommand>, IRequest<SaveLocationResponse>
+    public class SaveRentalCommand : CommandBase<SaveRentalCommand>, IRequest<SaveRentalResponse>
     {
-        public SaveLocationCommand() : base(new SaveLocationCommandValidator())
+        public SaveRentalCommand() : base(new SaveRentalCommandValidator())
         {
 
         }

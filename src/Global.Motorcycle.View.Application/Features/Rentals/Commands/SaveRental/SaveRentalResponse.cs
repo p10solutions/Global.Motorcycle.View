@@ -1,6 +1,6 @@
-namespace Global.Motorcycle.View.Application.Features.Locations.Commands.SaveLocation
+namespace Global.Motorcycle.View.Application.Features.Rentals.Commands.SaveRental
 {
-    public class SaveLocationResponse
+    public class SaveRentalResponse
     {
         public Guid Id { get; set; }
         public Guid DeliverymanId { get; set; }

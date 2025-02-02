@@ -55,7 +55,7 @@ namespace Global.Delivery.View.Application.Features.Deliverys.Commands.SaveDeliv
                 return;
 
             var location = motorcycle
-                .Locations
+                .Rentals
                 .FirstOrDefault(x => x.DeliverymanId == deliveryman.Id);
 
             location.Deliveryman = deliveryman;

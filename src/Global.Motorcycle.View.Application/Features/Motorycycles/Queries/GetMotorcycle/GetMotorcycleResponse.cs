@@ -9,6 +9,6 @@ namespace Global.Motorcycle.View.Application.Features.Motorcycles.Queries.GetMot
         public string Plate { get; set; }
         public int Year { get; set; }
         public EMotorcycleStatus Status { get; set; }
-        public IEnumerable<Location> Locations { get; set; }
+        public IEnumerable<Rental> Locations { get; set; }
     }
 }

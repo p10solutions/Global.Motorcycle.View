@@ -12,7 +12,7 @@ namespace Global.Motorcycle.View.Application.Features.Motorcycles.Queries.GetMot
             CreateMap<MotorcycleEntity, GetMotorcycleResponse>();
             CreateMap<Plan, PlanCommand>();
             CreateMap<Deliveryman, GetMotorcycleDeliverymanResponse>();
-            CreateMap<Location, GetMotorcycleLocationResponse>();
+            CreateMap<Rental, GetMotorcycleLocationResponse>();
         }
     }
 }

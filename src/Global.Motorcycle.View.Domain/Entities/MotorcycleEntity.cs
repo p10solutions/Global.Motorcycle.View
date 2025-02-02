@@ -7,6 +7,6 @@ namespace Global.Motorcycle.View.Domain.Entities
         public string Plate { get; set; }
         public int Year { get; set; }
         public EMotorcycleStatus Status { get; set; }
-        public IList<Location> Locations { get; set; } = new List<Location>();
+        public IList<Rental> Rentals { get; set; } = new List<Rental>();
     }
 }

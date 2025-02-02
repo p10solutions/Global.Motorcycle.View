@@ -1,5 +1,5 @@
 using AutoFixture;
-using Global.Motorcycle.View.Application.Features.Locations.Commands.SaveLocation;
+using Global.Motorcycle.View.Application.Features.Rentals.Commands.SaveRental;
 
 namespace Global.Motorcycle.View.UnitTest.Application.Features.Locations.Commands.SaveLocation
 {
@@ -15,7 +15,7 @@ namespace Global.Motorcycle.View.UnitTest.Application.Features.Locations.Command
         [Fact]
         public void Command_Should_Be_Valid()
         {
-            var command = _fixture.Create<SaveLocationCommand>();
+            var command = _fixture.Create<SaveRentalCommand>();
 
             var result = command.Validate();
 
@@ -25,7 +25,7 @@ namespace Global.Motorcycle.View.UnitTest.Application.Features.Locations.Command
         [Fact]
         public void Command_Should_Be_Invalid()
         {
-            var command = new SaveLocationCommand();
+            var command = new SaveRentalCommand();
 
             var result = command.Validate();
 

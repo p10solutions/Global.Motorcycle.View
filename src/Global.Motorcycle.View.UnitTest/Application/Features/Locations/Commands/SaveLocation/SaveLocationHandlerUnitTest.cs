@@ -1,6 +1,7 @@
 using AutoFixture;
 using AutoMapper;
 using Global.Motorcycle.View.Application.Features.Locations.Commands.SaveLocation;
+using Global.Motorcycle.View.Application.Features.Rentals.Commands.SaveRental;
 using Global.Motorcycle.View.Domain.Contracts.Data.Repositories;
 using Global.Motorcycle.View.Domain.Contracts.Notifications;
 using Global.Motorcycle.View.Domain.Entities;
@@ -13,31 +14,31 @@ namespace Global.Motorcycle.View.UnitTest.Application.Features.Locations.Command
     public class SaveLocationHandlerUnitTest
     {
         readonly Mock<IMotorcycleRepository> _motorcycleRepository;
-        readonly Mock<ILogger<SaveLocationHandler>> _logger;
+        readonly Mock<ILogger<SaveRentalHandler>> _logger;
         readonly Mock<INotificationsHandler> _notificationsHandler;
         readonly Fixture _fixture;
-        readonly SaveLocationHandler _handler;
+        readonly SaveRentalHandler _handler;
 
         public SaveLocationHandlerUnitTest()
         {
             _motorcycleRepository = new Mock<IMotorcycleRepository>();
-            _logger = new Mock<ILogger<SaveLocationHandler>>();
+            _logger = new Mock<ILogger<SaveRentalHandler>>();
             _notificationsHandler = new Mock<INotificationsHandler>();
             var mappingConfig = new MapperConfiguration(mc =>
             {
-                mc.AddProfile(new SaveLocationMapper());
+                mc.AddProfile(new SaveRentalMapper());
             });
             IMapper mapper = mappingConfig.CreateMapper();
 
             _fixture = new Fixture();
-            _handler = new SaveLocationHandler(_motorcycleRepository.Object, _logger.Object, mapper,
+            _handler = new SaveRentalHandler(_motorcycleRepository.Object, _logger.Object, mapper,
                 _notificationsHandler.Object);
         }
 
         [Fact]
         public async Task Location_Should_Be_Created_Successfully_When_All_Information_Has_Been_Submitted()
         {
-            var command = _fixture.Create<SaveLocationCommand>();
+            var command = _fixture.Create<SaveRentalCommand>();
 
             var response = await _handler.Handle(command, CancellationToken.None);
 
@@ -48,7 +49,7 @@ namespace Global.Motorcycle.View.UnitTest.Application.Features.Locations.Command
         [Fact]
         public async Task Location_Should_Not_Be_Created_When_An_Exception_Was_Thrown()
         {
-            var command = _fixture.Create<SaveLocationCommand>();
+            var command = _fixture.Create<SaveRentalCommand>();
 
             _motorcycleRepository.Setup(x => x.AddAsync(It.IsAny<MotorcycleEntity>())).Throws(new Exception());
             _notificationsHandler

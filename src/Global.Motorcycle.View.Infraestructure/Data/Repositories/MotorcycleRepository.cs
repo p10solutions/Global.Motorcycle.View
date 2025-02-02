@@ -38,7 +38,7 @@ namespace Global.Motorcycle.View.Infraestructure.Data.Repositories
 
         public async Task<MotorcycleEntity> GetByDeliverymanIdAsync(Guid deliverymanId)
         {
-            var filter = Builders<MotorcycleEntity>.Filter.ElemMatch(m => m.Locations, loc => loc.DeliverymanId == deliverymanId);
+            var filter = Builders<MotorcycleEntity>.Filter.ElemMatch(m => m.Rentals, loc => loc.DeliverymanId == deliverymanId);
             return await _motoCollection.Find(filter).FirstOrDefaultAsync();
         }
 
